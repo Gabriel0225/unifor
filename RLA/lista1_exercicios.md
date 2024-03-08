@@ -1,3 +1,14 @@
+# UNIFOR
+**Nome**: Gabriel Musashi Miyazawa
+**Disciplina**: Raciocínio lógico algorítmico
+
+## Lista de exercícios 01
+
+### Exercício 3
+Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um número inteiro e positivo é par ou impar.
+
+#### Fluxograma
+
 ``` mermaid
 flowchart TD
 A([START]) --> B{{Write a number}} 
