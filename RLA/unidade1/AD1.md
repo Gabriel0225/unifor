@@ -6,7 +6,7 @@
 **Código/Turma:** preencha com seus dados <br>
 **Professor:** Ricardo Carubbi <br>
 **Data:** preencha com a data de envio <br>
-**Aluno(a):** preencha com seus dados <br>
+**Aluno(a):** Gabriel Musashi Miyazawa <br>
 **Matrícula:** preencha com seus dados <br>
 
 **1a chamada (Sim/Não):** preencha com a opção correta <br>
