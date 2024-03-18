@@ -147,7 +147,7 @@ flowchart TD
 A([INICIO]) --> B{{Digite um número: }}
 B --> C[\n\]
 C --> D[\num = 0\]
-D --> E{num <= 30}
+D --> E{num <= n}
 E --FALSE--> I([FIM])
 E --TRUE--> F{{"Num", 0}}
 F --> G[num =+ 3]
