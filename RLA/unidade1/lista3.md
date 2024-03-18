@@ -111,6 +111,22 @@ E --FALSE--> G{{Este número é ímpar}} --> H
 
 ```
 Algoritmo ClassificaCategoria
+var
+   N, I: Inteiro
+inicio
+      Escreva ("Digite um número positivo: ")
+      Leia (N)
+      Se (N < 0) entao
+         Repita
+               Escreva ("Este número não é positivo. Digite outro: ")
+               Leia (N)
+         ate N >= 0
+      FimSe
+      Se (N % 2 = 0) entao
+         Escreva ("Este número é par.")
+      Senao
+           Escreva ("Este número é ímpar.")
+      FimSe
 FIM_ALGORITMO
 ```
 
