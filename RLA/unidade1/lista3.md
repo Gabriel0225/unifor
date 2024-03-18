@@ -157,8 +157,18 @@ G --LOOP--> E
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+algoritmo "print_n_primeiros"
+ var
+    n, num: INTEIRO
+ inicio
+       ESCREVA ("Digite um número: ")
+       LEIA (n)
+       num <- 0
+       ENQUANTO num <= n FAÇA
+      	ESCREVAL("Número ", num)
+      	num <- num + 3
+       FIMENQUANTO
+ Fimalgoritmo
 ```
 
 #### Teste de mesa (0.5 ponto)
