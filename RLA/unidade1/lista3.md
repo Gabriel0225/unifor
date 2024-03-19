@@ -161,10 +161,8 @@ algoritmo "print_n_primeiros"
  var
     n, num: INTEIRO
  inicio
-       ESCREVA ("Digite um número: ")
-       LEIA (n)
        num <- 0
-       ENQUANTO num <= n FAÇA
+       ENQUANTO num <= 30 FAÇA
       	ESCREVAL("Número ", num)
       	num <- num + 3
        FIMENQUANTO
