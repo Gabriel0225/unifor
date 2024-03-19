@@ -192,10 +192,11 @@ A([INICIO]) --> B([FIM])
 ```
 algoritmo "SOMA"
 var
-   S, N, cont: Inteiro
+   S, N, V, cont: Inteiro
 inicio
+      Escreva ("Quantos valores você quer somar? ")
       S <- 0
-      Enquanto cont <= 4 faca
+      Enquanto cont <= V faca
           Escreva ("Digite um número: ")
           Leia (N)
           S <- S + N
