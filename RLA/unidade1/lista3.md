@@ -144,10 +144,10 @@ Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite um número: }}
-B --> C[\n\]
+A([INICIO]) 
+A --> C[\30\]
 C --> D[\num = 0\]
-D --> E{num <= n}
+D --> E{num <= 30}
 E --FALSE--> I([FIM])
 E --TRUE--> F{{"Num", 0}}
 F --> G[num =+ 3]
