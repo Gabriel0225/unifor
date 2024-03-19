@@ -190,8 +190,19 @@ A([INICIO]) --> B([FIM])
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+algoritmo "SOMA"
+var
+   S, N, cont: Inteiro
+inicio
+      S <- 0
+      Enquanto cont <= 4 faca
+          Escreva ("Digite um número: ")
+          Leia (N)
+          S <- S + N
+          cont <- cont + 1
+      FimEnquanto
+      Escreval("A soma desses valores foi ", S)
+fimalgoritmo
 ```
 
 #### Teste de mesa (0.5 ponto)
