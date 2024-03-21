@@ -184,7 +184,9 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Quantos valores você quer somar? "}} --> C[/V/] --> D{cont <= V} --TRUE--> E{{"Digite um número"}} --> F[/N/]
+F --> G[S <- S + N] --> H[cont <- cont + 1] --> D
+D --FALSE--> I{{"A soma foi ", S}} --> J([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
@@ -223,7 +225,8 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[soma <- 0] --> C{nota < 0} --FALSE--> D{{"Digite uma nota"}} --> E[/nota/] --> F[cont <- cont + 1] --> G[media <- soma / cont] --> C
+C --TRUE--> H{{"A média foi de ", media:2:1}} --> I{{"Foram lidas ", cont, " notas"}}
 ```
 
 #### Pseudocódigo (1.0 ponto)
