@@ -195,6 +195,7 @@ var
    S, N, V, cont: Inteiro
 inicio
       Escreva ("Quantos valores você quer somar? ")
+      Leia (V)
       S <- 0
       Enquanto cont <= V faca
           Escreva ("Digite um número: ")
@@ -228,8 +229,22 @@ A([INICIO]) --> B([FIM])
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+algoritmo "media_notas"
+var
+   soma, media, nota: REAL
+   cont: INTEIRO
+inicio
+      soma <- 0
+      ENQUANTO (nota >= 0) FACA
+         ESCREVA ("Digite uma nota: ")
+         LEIA (nota)
+         soma <- soma + nota
+         cont <- cont + 1
+         media <- soma / cont
+      FIMENQUANTO
+      ESCREVAL("A média foi de ", media:2:1)
+      ESCREVAL("Foram lidas", cont, " notas")
+fimalgoritmo
 ```
 
 #### Teste de mesa (0.5 ponto)
