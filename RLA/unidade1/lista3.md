@@ -241,26 +241,28 @@ I --> J([FIM])
 algoritmo "media_notas"
 var
    soma, media, nota: REAL
-   cont: INTEIRO
+   i: INTEIRO
 inicio
       soma <- 0
+      i <- 1
       SE (nota >= 0) ENTAO
          REPITA
             ESCREVA ("Digite uma nota: ")
             LEIA (nota)
             soma <- soma + nota
-            cont <- cont + 1
-            media <- soma / cont
+            i <- i + 1
          ATE (nota < 0)
+         media <- soma / i
       FIMSE
       ESCREVAL("A média foi de ", media:3:2)
-      ESCREVAL("Foram lidas", cont, " notas")
+      ESCREVAL("Foram lidas", i, " notas")
 fimalgoritmo
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+| nota         | i            | soma         | nota < 0     | media        |        
 |      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| 6.5          | 1            | 6.5          |  FALSE       |     6.5      |
+| 8.6          | 2            | 15.1         |  FALSE       |     7.55     |
+| -1           | 3            | 14.1         |  TRUE        |     7.55     |
