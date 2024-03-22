@@ -224,15 +224,18 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[soma <- 0]
-B --> C{nota < 0}
-C --FALSE--> D{{"Digite uma nota"}}
+A([INICIO]) --> B[soma = 0]
+B --> C[cont = 1]
+C --> D{{"Digite uma nota"}}
 D --> E[/nota/]
-E --> F[cont <- cont + 1]
-F --> G[media <- soma / cont]
-G --> C
-C --TRUE--> I{{"A média foi de ", media:3:2}}
-I --> J([FIM])
+E --> F[cont = cont + 1]
+F --> G[media = soma / cont]
+G --> H{nota < 0}
+H --FALSE/LOOP--> D
+
+H --TRUE--> I{{"A média foi de ", media:3:2}}
+I --> J{{Foram lidas, nota, notas}}
+J --> K([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
