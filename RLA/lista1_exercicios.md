@@ -15,7 +15,7 @@ A([START]) --> B{{Write a number}}
 B --> C[/num/]
 C --> D{num >= 0}
 D --NOT--> E{{The number must be positive}}
-D --YES--> G{num % 2 = 0}
+D --YES--> G{num % 2 == 0}
 G --YES--> H{{PAIR}}
 G --NOT--> I{{ODD}}
 H --> F
