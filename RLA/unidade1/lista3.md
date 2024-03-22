@@ -145,8 +145,7 @@ Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas 
 ```mermaid
 flowchart TD
 A([INICIO]) 
-A --> C[\30\]
-C --> D[\num = 0\]
+A --> D[\num = 0\]
 D --> E{num <= 30}
 E --FALSE--> I([FIM])
 E --TRUE--> F{{"Num", 0}}
@@ -225,8 +224,15 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[soma <- 0] --> C{nota < 0} --FALSE--> D{{"Digite uma nota"}} --> E[/nota/] --> F[cont <- cont + 1] --> G[media <- soma / cont] --> C
-C --TRUE--> H{{"A média foi de ", media:2:1}} --> I{{"Foram lidas ", cont, " notas"}}
+A([INICIO]) --> B[soma <- 0]
+B --> C{nota < 0}
+C --FALSE--> D{{"Digite uma nota"}}
+D --> E[/nota/]
+E --> F[cont <- cont + 1]
+F --> G[media <- soma / cont]
+G --> C
+C --TRUE--> I{{"A média foi de ", media:3:2}}
+I --> J([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
@@ -238,14 +244,16 @@ var
    cont: INTEIRO
 inicio
       soma <- 0
-      ENQUANTO (nota >= 0) FACA
-         ESCREVA ("Digite uma nota: ")
-         LEIA (nota)
-         soma <- soma + nota
-         cont <- cont + 1
-         media <- soma / cont
-      FIMENQUANTO
-      ESCREVAL("A média foi de ", media:2:1)
+      SE (nota >= 0) ENTAO
+         REPITA
+            ESCREVA ("Digite uma nota: ")
+            LEIA (nota)
+            soma <- soma + nota
+            cont <- cont + 1
+            media <- soma / cont
+         ATE (nota < 0)
+      FIMSE
+      ESCREVAL("A média foi de ", media:3:2)
       ESCREVAL("Foram lidas", cont, " notas")
 fimalgoritmo
 ```
