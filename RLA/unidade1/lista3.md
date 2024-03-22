@@ -183,7 +183,7 @@ Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrev
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> K[S <- 0] --> B{{"Quantos valores você quer somar? "}} --> C[/V/] --> D{cont <= V} --TRUE--> E{{"Digite um número"}} --> F[/N/]
+A([INICIO]) --> K[S <- 0] --> L[cont <- 0] --> B{{"Quantos valores você quer somar? "}} --> C[/V/] --> D{cont <= V} --TRUE--> E{{"Digite um número"}} --> F[/N/]
 F --> G[S <- S + N] --> H[cont <- cont + 1] --> D
 D --FALSE--> I{{"A soma foi ", S}} --> J([FIM])
 ```
