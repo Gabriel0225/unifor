@@ -225,17 +225,21 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 ```mermaid
 flowchart TD
 A([INICIO]) --> B[soma = 0]
-B --> C[cont = 1]
-C --> D{{"Digite uma nota"}}
-D --> E[/nota/]
-E --> F[cont = cont + 1]
-F --> G[media = soma / cont]
-G --> H{nota < 0}
-H --FALSE/LOOP--> D
-
-H --TRUE--> I{{"A média foi de ", media:3:2}}
-I --> J{{Foram lidas, nota, notas}}
-J --> K([FIM])
+B --> C[cont = 0]
+C --> K{{"Digite uma nota"}}
+K --> N[/nota/]
+C --> D{nota >= 0}
+D --TRUE--> E{{"Digite uma nota"}}
+E --> F[/nota/]
+F --> G[cont = cont + 1]
+G --> H[media = (soma - nota) / cont]
+H --> I{nota < 0}
+I --FALSE/LOOP--> E
+D --FALSE--> O([FIM])
+I --> J{{"A média foi de ", media:3:2}}
+J --> L{{"Foram lidas ", cont}}
+L --> M{{" notas"}}
+M --> O
 ```
 
 #### Pseudocódigo (1.0 ponto)
@@ -244,28 +248,30 @@ J --> K([FIM])
 algoritmo "media_notas"
 var
    soma, media, nota: REAL
-   i: INTEIRO
+   cont: INTEIRO
 inicio
-      soma <- 0
-      i <- 1
+      cont <- 0
+      soma <- 0 
+      ESCREVA ("Digite a nota de um aluno: ")
+      LEIA (nota)
       SE (nota >= 0) ENTAO
-         REPITA
-            ESCREVA ("Digite uma nota: ")
-            LEIA (nota)
-            soma <- soma + nota
-            i <- i + 1
-         ATE (nota < 0)
-         media <- soma / i
+            REPITA
+               ESCREVA ("Digite a nota de outro aluno: ")
+               LEIA (nota)
+               soma <- soma + nota
+               cont <- cont + 1
+            ATE (nota < 0)
+            media <- (soma - nota) / cont
+         ESCREVAL("A média foi ", media:3:2)
+         ESCREVAL("Foram lidas ", cont, " notas")
       FIMSE
-      ESCREVAL("A média foi de ", media:3:2)
-      ESCREVAL("Foram lidas", i, " notas")
 fimalgoritmo
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nota         | i            | soma         | nota < 0     | media        |        
-|      --      |      --      |      --      |      --      |      --      | 
-| 6.5          | 1            | 6.5          |  FALSE       |     6.5      |
-| 8.6          | 2            | 15.1         |  FALSE       |     7.55     |
-| -1           | 3            | 14.1         |  TRUE        |     7.55     |
+| nota         | cont         | soma         | nota < 0     | media        |        
+|      6.5     |      0       |      6.5     |     FALSE    |      --      | 
+|      8.6     |      1       |     15.1     |     FALSE    |     2.10     |
+|      7.4     |      2       |     22.5     |     FALSE    |     7.55     |
+|      -1      |      3       |     21.5     |     TRUE     |     7.50     |
