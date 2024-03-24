@@ -228,11 +228,12 @@ A([INICIO]) --> B[soma = 0]
 B --> C[cont = 0]
 C --> K{{"Digite uma nota"}}
 K --> N[/nota/]
-C --> D{nota >= 0}
-D --TRUE--> E{{"Digite uma nota"}}
+N --> D{nota >= 0}
+D --TRUE--> E{{"Digite outra nota"}}
 E --> F[/nota/]
 F --> G[cont = cont + 1]
-G --> H[media = (soma - nota) / cont]
+G --> P[soma_ant <- soma - nota]
+P --> H[media = soma_ant / cont]
 H --> I{nota < 0}
 I --FALSE/LOOP--> E
 D --FALSE--> O([FIM])
