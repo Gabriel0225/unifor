@@ -224,15 +224,15 @@ Ex. Foram lidas 14 notas. A média aritmética é 6.75!
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B[soma = 0]
-B --> C[cont = 0]
+A([INICIO]) --> C[cont = 0]
 C --> K{{"Digite uma nota"}}
-K --> N[/nota/]
-N --> D{nota >= 0}
+K --> N[/nota1/]
+N --> B[soma = nota1]
+B --> D{nota1 >= 0}
 D --TRUE--> E{{"Digite outra nota"}}
 E --> F[/nota/]
 F --> G[cont = cont + 1]
-G --> P[soma_ant <- soma - nota]
+G --> P[soma_ant = soma - nota]
 P --> H[media = soma_ant / cont]
 H --> I{nota < 0}
 I --FALSE/LOOP--> E
@@ -248,14 +248,14 @@ M --> O
 ```
 algoritmo "media_notas"
 var
-   soma, media, nota: REAL
+   soma, media, nota, nota1: REAL
    cont: INTEIRO
 inicio
-      cont <- 0
-      soma <- 0 
+      cont <- 0 
       ESCREVA ("Digite a nota de um aluno: ")
-      LEIA (nota)
-      SE (nota >= 0) ENTAO
+      LEIA (nota1)
+      soma <- nota1
+      SE (nota1 >= 0) ENTAO
             REPITA
                ESCREVA ("Digite a nota de outro aluno: ")
                LEIA (nota)
