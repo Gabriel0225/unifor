@@ -95,7 +95,24 @@ H --> E
 #### Pseudocódigo (0.5 ponto)
 
 ```
-
+algoritmo "semnome"
+var
+   N, nota, i, cont: INTEIRO
+inicio
+   ESCREVA ("Digite o número de alunos: ")
+   LEIA (N)
+   i <- 0
+   cont <- 0
+   ENQUANTO (i < N) FACA
+      ESCREVA ("Digite a nota de um aluno: ")
+      LEIA (nota)
+      SE (nota >= 50) ENTAO
+         cont <- cont + 1
+      FIMSE
+      i <- i + 1
+   FIMENQUANTO
+   ESCREVA ("O número de alunos aprovados foi ", cont)
+fimalgoritmo
 ```
 
 #### Teste de mesa (0.25 ponto)
