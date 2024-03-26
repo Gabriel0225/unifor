@@ -94,22 +94,8 @@ H --> E
 
 #### Pseudocódigo (0.5 ponto)
 
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{Digite o número de alunos}}
-B --> C[/N/]
-C --> D[i = 0]
-D --> K[cont = 0]
-K --> E{i <= n}
-E --FALSE--> L{{O número de alunos aprovados foi, cont}}
-L --> M([FIM])
-I --TRUE--> J[cont =+ 1] 
-I --FALSE-->H[i =+ 1]
-E --TRUE--> F{{Digite uma nota}}
-F --> G[/nota/]
-G --> I{nota >= 50}
-J --> H
-H --> E
+```
+
 ```
 
 #### Teste de mesa (0.25 ponto)
