@@ -131,14 +131,42 @@ Aceite apenas $n$ maior ou igual a zero.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[S = 0]
+B --> C{{Quantos números você quer somar?}}
+C --> D[/n/]
+D --> E{n >= 0}
+E --FALSE--> F{{O número deve ser positivo}}
+F --> G([FIM])
+E --TRUE--> H[[i = 1 ATE n PASSO 1]]
+H --FALSE--> L{{A soma desses números é, S}}
+L --> G
+H --TRUE--> I{{Digite um número}}
+I --> J[/num/]
+J --> K[S = S + num]
+K --LOOP--> H
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+algoritmo "semnome"
+var
+   n, i: INTEIRO            S, num: REAL
+inicio
+      S <- 0
+      ESCREVA ("Quantos números você quer somar? ")
+      LEIA (n)
+      SE (n >= 0) ENTAO
+         PARA i DE 1 ATE n PASSO 1 FACA
+             ESCREVA ("Digite um número: ")
+             LEIA (num)
+             S <- S + num
+         FIMPARA
+         ESCREVA ("A soma desses números é ", S)
+      SENAO
+         ESCREVA ("O número deve ser positivo")
+      FIMSE
+fimalgoritmo
 ```
 
 #### Teste de mesa (0.25 ponto)
