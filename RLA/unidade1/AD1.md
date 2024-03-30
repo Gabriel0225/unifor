@@ -186,14 +186,45 @@ $$ S = \frac{1}{2} + \frac{3}{4} + \frac{5}{6} + \frac{7}{8} + \dots $$
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[S = 0]
+B --> C[N = 1]
+C --> D[p = 1]
+D --> E[q = 2]
+E --> F{{Quantos valores você quer somar? }}
+F --> G[/V/]
+G --> H{N <= V}
+H --> M{{A soma desses números é, S}}
+M --> N([FIM])
+H --TRUE--> I[N = N + 1]
+I --> J[S = S + p / q]
+J --> K[p = p + 2]
+K --> L[q = q + 2]
+L --LOOP--> H 
 ```
+
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+algoritmo "semnome"
+var
+   p, q, N,V: INTEIRO
+   S: REAL
+inicio
+   S <- 0
+   N <- 1
+   p <- 1
+   q <- 2
+   ESCREVA ("Quantos valores você quer somar? ")
+   LEIA (V)
+   ENQUANTO (N <= V) FACA
+      N <- N + 1
+      S <- S + p / q
+      p <- p + 2
+      q <- q + 2
+   FIMENQUANTO
+   ESCREVA ("A soma desses números é ", S)
+fimalgoritmo
 ```
 
 #### Teste de mesa (0.25 ponto)
@@ -262,14 +293,37 @@ Implemente e teste um algoritmo para inverter a ordem dos dígitos de um número
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite um número positivo de dois dígitos}}
+B --> C[/n/]
+C --> D{n >= 10 ou n < 100}
+D --TRUE--> E{{O número deve ter dois dígitos. Digite outro:}}
+E --> F[/n/]
+F --> G{n >= 10 e n < 100}
+G --> H[b = n % 10]
+H --> I[a = n \ 10]
+I --> J[ n = 10 * b + a]
+J --> K{{O valor de n invertido é , n}}
+D --FALSE--> H
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-FIM_ALGORITMO
+inicio
+   ESCREVA ("Digite um número positivo de dois dígitos: ")
+   LEIA (n)
+   SE (n < 10) OU (n >= 100) ENTAO
+      REPITA
+         ESCREVA ("O número deve ter dois dígitos. Digite outro: ")
+         LEIA (n)
+      ATE (n >= 10) E (n < 100)
+   FIMSE
+      b <- n % 10
+      a <- n \ 10
+      n <- 10 * b + a
+      ESCREVA ("O valor de n invertido é ", n)
+fimalgoritmo
+
 ```
 
 #### Teste de mesa (0.5 ponto)
