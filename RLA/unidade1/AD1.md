@@ -50,14 +50,38 @@ Dadas duas variáveis, $a$ e $b$, implemente e teste um algoritmo para trocar os
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o valor de A: }}
+B --> C[/A/]
+C --> D{{Digite o valor de B}}
+D --> E[/B/]
+E --> F[C = A]
+F --> G[D = B]
+G --> H[A = D]
+H --> I[B = C]
+I --> J{{Valor de A: , A}}
+J --> K{{Valor de B: , B}}
+K --> L([FIM])
 ```
 
 #### Pseudocódigo (0.5 ponto)
 
 ```
-Algoritmo TrocaValores
-FIM_ALGORITMO
+algoritmo "semnome"
+var
+   A, B, C, D: INTEIRO
+inicio
+   ESCREVA ("Digite o valor de A: ")
+   LEIA (A)
+   ESCREVA ("Digite o valor de B: ")
+   LEIA (B)
+   C <- A
+   D <- B
+   A <- D
+   B <- C
+   ESCREVAL("Valor de A: ", A)
+   ESCREVAL("Valor de B: ", B)
+fimalgoritmo
+
 ```
 
 #### Teste de mesa (0.25 ponto)
