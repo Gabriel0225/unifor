@@ -121,7 +121,7 @@ H --> E
 ```
 algoritmo "semnome"
 var
-   N, nota, i, cont: INTEIRO
+   N, nota, i, cont: REAL
 inicio
    ESCREVA ("Digite o número de alunos: ")
    LEIA (N)
@@ -333,6 +333,9 @@ D --FALSE--> H
 #### Pseudocódigo (1.0 ponto)
 
 ```
+algoritmo "inversao_ordem"
+var
+   n, a, b: INTEIRO
 inicio
    ESCREVA ("Digite um número positivo de dois dígitos: ")
    LEIA (n)
