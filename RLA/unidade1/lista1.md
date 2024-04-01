@@ -29,20 +29,20 @@ I --> Z
 ```
 1  ALGORTIMO verifica_par_impar
 2  DECLARE numero, resto: INTEIRO
-3  ESCREVA "Digite um número: "
-4  INICIO
-4  LEIA numero
-5  SE numero >= 0 ENTAO                  // verifica se o inteiro é positivo
-6    resto = numero % 2                 // calcula o resto da divisão por 2
-7    SE resto == 0 ENTAO                // verifica se o resto é igual a zero
-8      ESCREVA "O número é par!"
-9    SENAO
-10     ESCREVA "O número é impar!"
-11   FIM_SE
-11  SENAO                                // caso inteiro for negativo (condição linha 5)
-12    ESCREVA "O número deve ser postivo!"
-13  FIM_SE
-13 FIM
+3  INICIO
+4  ESCREVA "Digite um número: "
+5  LEIA numero
+6  SE numero >= 0 ENTAO                  // verifica se o inteiro é positivo
+7    resto = numero % 2                 // calcula o resto da divisão por 2
+8    SE resto == 0 ENTAO                // verifica se o resto é igual a zero
+9      ESCREVA "O número é par!"
+10   SENAO
+11     ESCREVA "O número é impar!"
+12   FIM_SE
+13  SENAO                                // caso inteiro for negativo (condição linha 5)
+14    ESCREVA "O número deve ser postivo!"
+15  FIM_SE
+16 FIM
 ```
 
 #### Teste de mesa (0,25 ponto)
@@ -61,22 +61,41 @@ Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 ter�
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite o salário atual do funcionário}}
+B --> C[/sal/]
+C --> D{sal <= 500}
+D --TRUE--> E[Nsal = sal * 1.2]
+D --FALSE-->F[Nsal = sal * 1.1]
+E --> G{{O novo salário do funcionário será de , Nsal, após o aumento}}
+F --> G
+G --> H([FIM]) 
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo Salario
+DECLARE sal, Nsal: REAL
+INICIO
+   ESCREVA "Digite o salário atual do funcionário: "
+   LEIA sal
+   SE sal <= 500 ENTAO
+      Nsal <- sal * 1.2
+   SENAO
+      Nsal <- sal * 1.1
+   FIM_SE
+   ESCREVA "O salário do funcionário será de R$ ", Nsal, " após o aumento"
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| sal | sal <= 500 | Nsal | Saída |
+| -- | -- | -- | -- | -- | 
+| 430 | V | 430 * 1.2 = 516  | "O salário do funcionário será de R$ 516 após o aumento" |
+| 870 | F | 870 * 1.1 = 957  | "O salário do funcionário será de R$ 957 após o aumento" |
+| 374 | V | 374 * 1.2 = 488.80 | "O salário do funcionário será de R$ 488.80 após o aumento" |
+| 537 | F | 537 * 1.1 = 590.70 | "O salário do funcionário será de R$ 590.70 após o aumento" |
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
@@ -85,7 +104,18 @@ Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média a
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a primeira nota do aluno:}}
+B --> C[/N1/] 
+C -->D{{Digite a segunda nota do aluno:}}
+D --> E[/N2/]
+E --> F[Snotas = N1 + N2]
+F --> G[media = Snotas / 2]
+G --> H{media < 5}
+H --TRUE--> I{{REPROVADO. Média: , media}}
+H --FALSE-->J{{APROVADO. Média: , media}}
+J --> K([FIM])
+I --> K
+
 ```
 
 #### Pseudocódigo (1 ponto)
