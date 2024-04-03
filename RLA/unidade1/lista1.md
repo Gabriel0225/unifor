@@ -90,12 +90,12 @@ FIM_ALGORITMO
 
 #### Teste de mesa (1.0 ponto)
 
-| sal | sal <= 500 | Nsal | Saída |
-| -- | -- | -- | -- | -- | 
-| 430 | V | 430 * 1.2 = 516  | "O salário do funcionário será de R$ 516 após o aumento" |
-| 870 | F | 870 * 1.1 = 957  | "O salário do funcionário será de R$ 957 após o aumento" |
-| 374 | V | 374 * 1.2 = 488.80 | "O salário do funcionário será de R$ 488.80 após o aumento" |
-| 537 | F | 537 * 1.1 = 590.70 | "O salário do funcionário será de R$ 590.70 após o aumento" |
+| sal | sal <= 500 | Nsal               | Saída                                                       |
+| --  |     --     |           --       |  --                                                         | 
+| 430 |     V      | 430 * 1.2 = 516.00 | "O salário do funcionário será de R$ 516.00 após o aumento" |
+| 870 |     F      | 870 * 1.1 = 957.00 | "O salário do funcionário será de R$ 957.00 após o aumento" |
+| 374 |     V      | 374 * 1.2 = 488.80 | "O salário do funcionário será de R$ 488.80 após o aumento" |
+| 537 |     F      | 537 * 1.1 = 590.70 | "O salário do funcionário será de R$ 590.70 após o aumento" |
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
