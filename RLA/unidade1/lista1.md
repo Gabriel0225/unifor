@@ -121,16 +121,28 @@ I --> K
 #### Pseudocódigo (1 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo media
+DECLARE N1, N2, Snotas, media: REAL
+INICIO
+   ESCREVA "Digita a primeira nota do aluno: "
+   LEIA N1
+   ESCREVA "Digite a segunda nota do aluno: "
+   LEIA N2
+   Snotas <- N1 + N2
+   media <- Snotas / 2
+   SE media < 5.00 ENTAO
+      ESCREVA "REPROVADO. Média: ", media:3:2
+   SENAO
+      ESCREVA "APROVADO. Média: ", media:3:2
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| N1  | N2  | Snotas | media |       Saída          | 
+| --  | --  |   --   |   --  |         --           | 
+| 9.2 | 7.8 |   17   | 8.50  | APROVADO. Média: 8.50|
+| 5.1 | 4.5 |   9.6  | 4.80  |REPROVADO. Média: 4.80|
 
 ## Exercício 04 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
