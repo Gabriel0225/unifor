@@ -139,10 +139,10 @@ FIM_ALGORITMO
 
 #### Teste de mesa (1 ponto)
 
-| N1  | N2  | Snotas | media |       Saída          | 
-| --  | --  |   --   |   --  |         --           | 
-| 9.2 | 7.8 |   17   | 8.50  | APROVADO. Média: 8.50|
-| 5.1 | 4.5 |   9.6  | 4.80  |REPROVADO. Média: 4.80|
+| N1  | N2  | Snotas | media |        Saída           | 
+| --  | --  |   --   |   --  |          --            | 
+| 9.2 | 7.8 |   17   | 8.50  | "APROVADO. Média: 8.50"|
+| 5.1 | 4.5 |   9.6  | 4.80  |"REPROVADO. Média: 4.80"|
 
 ## Exercício 04 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do candidato(a), determinar se pode ou não tirar a CNH. 
