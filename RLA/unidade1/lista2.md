@@ -56,22 +56,44 @@ Calcule a média de quatro números inteiros dados.
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B[i = 1]
+B --> C[S = 0]
+C --> D{{Digite o , i, º número}}
+D --> E[/N/]
+E --> F[i = i + 1]
+F --> G[S = S + N]
+G --> H{i <= N}
+H --LOOP-->D
+H --> I[M = S / 4]
+I --> J{{A média entre esses números é , M}}
+J --> K([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
 Algoritmo Media
+DECLARE i, S, N: INTEIRO    M: REAL        
+INICIO
+    i <- 1
+    S <- 0
+    REPITA
+        ESCREVA "Digite o ", i, "º número: "
+        LEIA N
+        i <- i + 1
+        S <- S + N
+    ATE_QUE i <= N
+    M <- S / 4
+    ESCREVA "A média entre esses números é ", M
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| i | S | N | i <= N | nome_coluna5 | 
+| - | - | - |      --      |      --      | 
+| 1 | 0 |   |  alinhar     | as barras    |
+| 2 |   |   | obrigatório. | Entendido ?  |
 
 ### Exercício 02 (2.5 pontos)
 Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
