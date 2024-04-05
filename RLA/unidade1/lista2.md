@@ -62,7 +62,7 @@ C --> D{{Digite o , i, º número}}
 D --> E[/N/]
 E --> F[i = i + 1]
 F --> G[S = S + N]
-G --> H{i <= N}
+G --> H{i <= 4}
 H --LOOP-->D
 H --> I[M = S / 4]
 I --> J{{A média entre esses números é , M}}
@@ -82,7 +82,7 @@ INICIO
         LEIA N
         i <- i + 1
         S <- S + N
-    ATE_QUE i <= N
+    ATE_QUE i <= 4
     M <- S / 4
     ESCREVA "A média entre esses números é ", M
 FIM_ALGORITMO
@@ -90,10 +90,12 @@ FIM_ALGORITMO
 
 #### Teste de mesa (0.5 ponto)
 
-| i | S | N | i <= N | nome_coluna5 | 
-| - | - | - |      --      |      --      | 
-| 1 | 0 |   |  alinhar     | as barras    |
-| 2 |   |   | obrigatório. | Entendido ?  |
+| i | S    | N    | i <= 4 | M  |
+| - |  --  |  --  |   --   | -- | 
+| 1 | 0.0  | 4.5  |   V    | -- |
+| 2 | 4.5  | 7.3  |   V    | -- |
+| 3 | 11.8 | 5.0  |   V    | -- |
+| 4 | 16.8 | 7.0  |   V    | 23.8 / 4 = 5.95 |
 
 ### Exercício 02 (2.5 pontos)
 Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
@@ -102,14 +104,36 @@ Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite a temperatura em Celisus:"}}
+B --> C[/C/]
+C --> D["F = (9/5) * C + 32"]
+D --> E{{A temperatura em Fahrenheit é, F, graus}}
+E --> F([FIM])
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ConverteCelsiusFarenheit
-FIM_ALGORITMO
+```java
+ALGORTIMO ConverteCelsiusFarenheit
+DECLARE C, F: REAL
+
+INICIO
+
+    // Entrada do usuário com a temperatura em Celsius
+    ESCREVA "Digite a temperatura em Celisus:"
+
+    // Armazena o valor da temperatura em Celsius
+    LEIA C
+
+    // Fórmula que converte a temperatura de Celsius para Fahrenheit
+    F <- (9/5) * C + 32
+
+    // Exibe o valor da temperatura em Fahrenheit
+    ESCREVA "A temperatura em Fahrenheit é", F, "graus"
+
+FIM
+```
 ```
 
 #### Teste de mesa (0.5 ponto)
