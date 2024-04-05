@@ -152,19 +152,35 @@ Caso não atender a restrição de idade, calcular quantos anos faltam para o ca
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{Digite a idade do candidato}}
+B --> C[/idade/]
+C --> D{idade < 18}
+D --TRUE--> E{{"Você não está apto a dirigir. Faltam ", 18 - idade}}
+E --> F{{ anos para você poder tirar a CNH}}
+D --FALSE--> G{{"Você está apto a dirigir"}}
+G --> H([FIM])
+F --> H
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ContaAprovacoes
+Algoritmo idade_CNH
+DECLARE idade: INTEIRO
+INICIO
+   ESCREVA "Digite a idade do candidato: "
+   LEIA idade
+   SE idade < 18 ENTAO
+      ESCREVA "Você não está apto a dirigir. Faltam ", 18 - idade, " anos para você poder tirar a CNH."
+   SENAO
+      ESCREVA "Você está apto a dirigir."
 FIM_ALGORITMO
 ```
 
 #### Teste de mesa (1.0 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| idade | idade < 18 | Saída                                                                    | 
+|  --   |     --     |                              --                                          |
+|  16   |      V     |"Você não está apto a dirigir. Faltam 2 anos para você poder tirar a CNH."|                               --                               | 
+|  14   |      V     |"Você não está apto a dirigir. Faltam 4 anos para você poder tirar a CNH."|  
+|  21   |      F     |"Você está apto a dirigir."                                               | 
