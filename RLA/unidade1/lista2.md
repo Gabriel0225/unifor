@@ -134,7 +134,6 @@ INICIO
 
 FIM
 ```
-```
 
 #### Teste de mesa (0.5 ponto)
 
