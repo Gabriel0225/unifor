@@ -192,7 +192,7 @@ INICIO
     // Entrada do usuário com a operação
     ESCREVA "Digite uma operação:"
 
-    // Insira seu comentário
+    // Armazena o número equivalente à operação a ser realizada
     LEIA op
 
     // Insira seu comentário
