@@ -195,63 +195,63 @@ INICIO
     // Armazena o número equivalente à operação a ser realizada
     LEIA op
 
-    // Insira seu comentário
+    // Entrada do usuário com o 1º número solicitado
     ESCREVA "Digite um número:"
     LEIA num1
 
-    // Insira seu comentário
+    // Entrada do usuário com o 2º número solicitado
     ESCREVA "Digite outro número:"
     LEIA num2
 
-    // Insira seu comentário
+    // Indica que o que vai ser feito depende de alguma variável
     ESCOLHA
 
-        // Insira seu comentário
+        // Executa as instruções que devem ser feitas caso o usuário tenha atribuído 1 à variável op
         CASO op == 1
 
-            // Insira seu comentário
+            // Calcula o valor de res (caso o usuário tenha admitido op como sendo 1)
             res = num1 + num2
 
-            // Insira seu comentário
+            // Exibe a operação e o resultado
             ESCREVA num1, "+", num2, "=", res
 
-        // Insira seu comentário
+        // Executa as instruções que devem ser feitas caso o usuário tenha atribuído 2 à variável op
         CASO op == 2
 
-            // Insira seu comentário
+            // Calcula o valor de res (caso o usuário tenha admitido op como sendo 2)
             res = num1 - num2
 
             // Insira seu comentário
             ESCREVA num1, "-", num2, "=", res
 
-        // Insira seu comentário
+        // Executa as instruções que devem ser feitas caso o usuário tenha atribuído 3 à variável op
         CASO op == 3
 
-            // Insira seu comentário
+            // Calcula o valor de res (caso o usuário tenha admitido op como sendo 3)
             res = num1 * num2
 
-            // Insira seu comentário
+            // Exibe a operação e o resultado
             ESCREVA num1, "*", num2, "=", res
 
-        // Insira seu comentário
+        // Executa as instruções que devem ser feitas caso o usuário tenha atribuído 4 à variável op
         CASO op == 4
 
-            // Insira seu comentário
+            // Executa as ordens seguintes caso a variável num2 seja diferente de zero
             SE num2 != 0 ENTAO
 
-                // Insira seu comentário
+                // Calcula o valor de res (caso o usuário tenha admitido op como sendo 4)
                 res = num1 / num2
 
-                // Insira seu comentário
+                // Exibe a operação e o resultado
                 ESCREVA num1, "/", num2, "=", res
 
-            // Insira seu comentário
+            // Executa as ordens seguintes caso a variável num2 seja igual a zero
             SENAO
                 ESCREVA "Impossível dividir!"
 
             FIM_SE
 
-    // Insira seu comentário
+    // Indica o que deve acontecer caso o usuário atribua um valor diferente dos dados anteriormente à variável op
     SENAO
         ESCREVA "Operação inválida!"
 
@@ -278,19 +278,92 @@ Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A 
 
 ```mermaid
 flowchart TD
-A([INICIO]) --> B([FIM])
+A([INICIO]) --> B{{"Digite a idade do aluno:"}}
+B --> C[/idade/]
+C --> D{idade >=5 <br>E <br>idade <= 7}
+D --FALSE--> F{idade >=8 <br>E <br>idade <= 10}
+F --FALSE--> G{idade >=11 <br>E <br>idade <= 13}
+G --FALSE--> H{idade >=14 <br>E <br>idade <= 17}
+H --FALSE--> I{idade >=18}
+I --FALSE--> P{{"Digite uma idade válida!"}}
+P --> Z([FIM])
+D --TRUE--> Q{{Infantial A}}
+F --TRUE--> K{{"Infantial B"}}
+G --TRUE--> L{{Juvenil A}}
+H --TRUE--> M{{Juvenil B}}
+I --TRUE--> N{{Adulto}}
+Q --> Z
+K --> Z
+L --> Z
+M --> Z
+N --> Z
 ```
 
 #### Pseudocódigo (1.0 ponto)
 
 ```
-Algoritmo ClassificaCategoria
-FIM_ALGORITMO
+ALGORTIMO ClassificaCategoria
+DECLARE idade: INTEIRO
+
+INICIO
+
+    // Entrada do usuário com a idade do aluno
+    ESCREVA "Digite a idade do aluno:"
+
+    // Armazena o valor da idade do aluno
+    LEIA idade
+
+    // Indica que as instruções seguintes dependem de uma variável
+    ESCOLHA
+
+        // Executa as instruções a serem feitas caso a variável idade esteja entre 5 e 7
+        CASO idade >=5 E idade <= 7
+
+            // Exibe a categoria do aluno
+            ESCREVA "Infantil A"
+
+        // Executa as instruções a serem feitas caso a variável idade esteja entre 8 e 10
+        CASO idade >=8 E idade <= 10
+
+            // Exibe a categoria do aluno
+            ESCREVA "Infantil B"
+
+        // Executa as instruções a serem feitas caso a variável idade esteja entre 11 e 13
+        CASO idade >=11 E idade <= 13
+
+            // Exibe a categoria do aluno
+            ESCREVA "Juvenil A"
+
+        // Executa as instruções a serem feitas caso a variável idade esteja entre 14 e 17
+        CASO idade >=14 E idade <= 17
+
+            // Exibe a categoria do aluno
+            ESCREVA "Juvenil B"
+
+        // Executa as instruções a serem feitas caso a variável idade seja maior ou igual a 18
+        CASO idade >=18
+
+            // Exibe a categoria do aluno
+            ESCREVA "Adulto"
+
+    // Executa as funções que devem ser feitas caso o valor da variável idade não esteja entre os valores dados anteriormente
+    SENAO
+
+        // Indica que a idade que o usuário colocou não está nas categorias dadas
+        ESCREVA "Digite uma idade válida!"
+
+    FIM_ESCOLHA
+
+FIM
 ```
 
 #### Teste de mesa (0.5 ponto)
 
-| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
-|      --      |      --      |      --      |      --      |      --      | 
-| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
-| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+| idade | idade >=8 E idade <= 10 | idade >=11 E idade <= 13 | idade >=14 E idade <= 17 | idade >=18 | saída                       | 
+| --    | --                      | --                       | --                       | --         | --                          |
+| 4     | False                   | False                    | False                    | False      | Digite uma idade válida!    |
+| -4    | False                   | False                    | False                    | False      | Digite uma idade válida!    |
+| 8     | True                    | False                    | False                    | False      | Infantial A                 |
+| 11    | False                   | True                     | False                    | False      | Infantial B                 |
+| 17    | False                   | False                    | True                     | False      | Infantial C                 |
+| 21    | False                   | False                    | False                    | True       | Adulto                      |
