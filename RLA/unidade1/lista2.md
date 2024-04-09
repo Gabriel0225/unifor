@@ -75,15 +75,25 @@ J --> K([FIM])
 Algoritmo Media
 DECLARE i, S, N: INTEIRO    M: REAL        
 INICIO
+    // Inicializa a variável "i" em 1
     i <- 1
+    // Inicializa a variável "S" em 0
     S <- 0
+    // Loop condicional (do-while loop) executa as instruções até que o mesmo seja quebrado
     REPITA
+        // Exibe a mensagem solictando o número em cada iteração
         ESCREVA "Digite o ", i, "º número: "
+        //  Armazena o valor de entrada na variável "N"
         LEIA N
+        // Incrementa 1 na variável "i" em cada iteração
         i <- i + 1
+        // Incrementa "N" na variável "S" em cada iteração
         S <- S + N
+    // Quebra do loop (do-while loop)
     ATE_QUE i <= 4
+    // Calcula o valor da variável "M", dividindo o valor final da variável "S" por 4
     M <- S / 4
+    // Exibe o valor da variável "M" na tela (a média entre os números atribuídos à variável "N")
     ESCREVA "A média entre esses números é ", M
 FIM_ALGORITMO
 ```
